@@ -8,6 +8,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowLeft, Check } from "lucide-react";
+import AdBanner from "@/components/AdBanner";
 
 export default function AllQuestionsPage() {
   return (
@@ -49,6 +50,7 @@ export default function AllQuestionsPage() {
                 ))}
             </Accordion>
         </div>
+        <AdBanner />
         <div className="mt-8 text-center">
             <Button asChild>
                 <Link href="/">Volver al inicio</Link>

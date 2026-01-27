@@ -74,6 +74,7 @@ export default function Home() {
             </CardContent>
         </Card>
       </div>
+      <AdBanner />
     </main>
   );
 }

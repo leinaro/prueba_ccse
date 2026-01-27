@@ -43,6 +43,7 @@ export default function ResultsPage({
             </CardDescription>
           </CardHeader>
           <CardContent>
+            <AdBanner />
             <div className="text-center my-6">
                 <p className="text-5xl sm:text-6xl font-bold">{finalCorrectAnswers} / {finalTotalQuestions}</p>
                 <p className="text-muted-foreground mt-2">Respuestas correctas</p>
