@@ -5,18 +5,17 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-// Function to shuffle array and get N elements
-const shuffleAndPick = <T,>(array: T[], count: number): T[] => {
-  const shuffled = [...array].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
+// Function to pick first N elements
+const pickFirstN = (array: Question[], count: number): Question[] => {
+  return array.slice(0, count);
 };
 
 export default function ExamPage() {
-  const task1Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 1'), 10);
-  const task2Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 2'), 3);
-  const task3Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 3'), 2);
-  const task4Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 4'), 3);
-  const task5Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 5'), 7);
+  const task1Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 1'), 10);
+  const task2Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 2'), 3);
+  const task3Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 3'), 2);
+  const task4Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 4'), 3);
+  const task5Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 5'), 7);
 
   const examQuestions = [
       ...task1Questions, 
