@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { PartyPopper, Frown } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import AdBanner from "@/components/AdBanner";
 
 export default function ResultsPage({
   params,
@@ -17,8 +18,19 @@ export default function ResultsPage({
   
   const incorrectlyAnsweredQuestions = questions.filter(q => incorrectIds.includes(q.id)) as Question[];
 
-  const totalQuestionsInTask = questions.filter(q => q.task.toLowerCase() === params.taskId.replace('-', ' ')).length;
-  const correctAnswers = totalQuestionsInTask - incorrectlyAnsweredQuestions.length;
+  const isSimulatedExam = params.taskId === 'examen-simulado';
+  
+  let finalCorrectAnswers: number;
+  let finalTotalQuestions: number;
+
+  if (isSimulatedExam) {
+    finalTotalQuestions = 25;
+    finalCorrectAnswers = finalTotalQuestions - incorrectlyAnsweredQuestions.length;
+  } else {
+    finalTotalQuestions = questions.filter(q => q.task.toLowerCase() === params.taskId.replace('-', ' ')).length;
+    finalCorrectAnswers = finalTotalQuestions - incorrectlyAnsweredQuestions.length;
+  }
+
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-8">
@@ -32,7 +44,7 @@ export default function ResultsPage({
           </CardHeader>
           <CardContent>
             <div className="text-center my-6">
-                <p className="text-5xl sm:text-6xl font-bold">{correctAnswers} / {totalQuestionsInTask}</p>
+                <p className="text-5xl sm:text-6xl font-bold">{finalCorrectAnswers} / {finalTotalQuestions}</p>
                 <p className="text-muted-foreground mt-2">Respuestas correctas</p>
             </div>
             {incorrectlyAnsweredQuestions.length === 0 ? (
@@ -50,6 +62,8 @@ export default function ResultsPage({
             )}
 
             <ResultsSummary questions={incorrectlyAnsweredQuestions} />
+
+            <AdBanner />
 
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild>

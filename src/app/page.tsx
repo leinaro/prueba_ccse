@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BookOpen, Flag, Map, Palette, Briefcase, ClipboardCheck, List } from "lucide-react";
 import Link from "next/link";
+import AdBanner from "@/components/AdBanner";
 
 const tasks = [
   { id: 1, name: "Tarea 1", description: "Gobierno, legislación y participación ciudadana", icon: BookOpen },
@@ -38,6 +39,8 @@ export default function Home() {
           </Card>
         ))}
       </div>
+
+      <AdBanner />
 
       <div className="text-center mt-16 mb-8 sm:mb-12 w-full max-w-4xl">
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
