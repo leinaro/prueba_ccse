@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import type { Question } from "@/lib/types";
 import QuizProgress from "./QuizProgress";
@@ -13,28 +13,18 @@ interface QuizClientProps {
   taskId: string;
 }
 
-// Function to shuffle array
-const shuffleArray = <T,>(array: T[]): T[] => {
-  return [...array].sort(() => Math.random() - 0.5);
-};
-
 export default function QuizClient({ questions, taskId }: QuizClientProps) {
   const router = useRouter();
-  const [shuffledQuestions, setShuffledQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<OptionKey | null>(null);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [score, setScore] = useState({ correct: 0, incorrect: 0 });
   const [incorrectlyAnsweredIds, setIncorrectlyAnsweredIds] = useState<number[]>([]);
 
-  useEffect(() => {
-    setShuffledQuestions(shuffleArray(questions));
-  }, [questions]);
-
   const handleSelectAnswer = (option: OptionKey) => {
     if (selectedAnswer) return;
 
-    const currentQuestion = shuffledQuestions[currentQuestionIndex];
+    const currentQuestion = questions[currentQuestionIndex];
     const correct = option === currentQuestion.answer;
 
     setSelectedAnswer(option);
@@ -53,7 +43,7 @@ export default function QuizClient({ questions, taskId }: QuizClientProps) {
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestionIndex < shuffledQuestions.length - 1) {
+    if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
       setSelectedAnswer(null);
       setIsCorrect(null);
@@ -65,11 +55,11 @@ export default function QuizClient({ questions, taskId }: QuizClientProps) {
   };
 
   const currentQuestion = useMemo(() => {
-      if (shuffledQuestions.length > 0) {
-          return shuffledQuestions[currentQuestionIndex];
+      if (questions.length > 0) {
+          return questions[currentQuestionIndex];
       }
       return null;
-  }, [shuffledQuestions, currentQuestionIndex]);
+  }, [questions, currentQuestionIndex]);
 
   if (!currentQuestion) {
     return <div className="text-center p-10">Cargando preguntas...</div>;
@@ -79,7 +69,7 @@ export default function QuizClient({ questions, taskId }: QuizClientProps) {
     <>
       <QuizProgress
         current={currentQuestionIndex + 1}
-        total={shuffledQuestions.length}
+        total={questions.length}
         correct={score.correct}
         incorrect={score.incorrect}
       />

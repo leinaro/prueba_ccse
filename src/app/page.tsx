@@ -52,7 +52,7 @@ export default function Home() {
               <CardTitle className="text-2xl font-bold">Simular Examen</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-start gap-4">
-              <p className="text-muted-foreground flex-grow">Pon a prueba tus conocimientos con una selección de 16 preguntas aleatorias de todas las tareas.</p>
+              <p className="text-muted-foreground flex-grow">Pon a prueba tus conocimientos con una selección de 25 preguntas aleatorias de todas las tareas.</p>
               <Button asChild className="w-full mt-auto">
                 <Link href="/quiz/examen-simulado">Comenzar Simulación</Link>
               </Button>

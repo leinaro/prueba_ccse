@@ -12,7 +12,7 @@ const shuffleAndPick = <T,>(array: T[], count: number): T[] => {
 };
 
 export default function ExamPage() {
-  const task1Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 1'), 1);
+  const task1Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 1'), 10);
   const task2Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 2'), 3);
   const task3Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 3'), 2);
   const task4Questions = shuffleAndPick(questions.filter(q => q.task.toLowerCase() === 'tarea 4'), 3);
