@@ -239,7 +239,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Cabildos.",
       "b": "Consejos insulares.",
-      "c": "Centros de diputados. 19 Instituto Cervantes"
+      "c": "Centros de diputados."
     },
     "answer": "b"
   },
@@ -327,7 +327,7 @@ export const questions: Question[] = [
     "options": {
       "a": "la Unión Europea.",
       "b": "el Parlamento Europeo.",
-      "c": "la Comisión de Europa. 20 Instituto Cervantes na"
+      "c": "la Comisión de Europa."
     },
     "answer": "a"
   },
@@ -547,7 +547,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Comunidad de Estados Independientes (CEI).",
       "b": "Fondo Monetario Internacional (FMI).",
-      "c": "Unión Económica Euroasiática (UEE). 21 Instituto Cervantes"
+      "c": "Unión Económica Euroasiática (UEE)."
     },
     "answer": "b"
   },
@@ -635,7 +635,7 @@ export const questions: Question[] = [
     "options": {
       "a": "El presidente del Senado.",
       "b": "El ministro de Economía.",
-      "c": "El presidente del Congreso de los Diputados. 22 Instituto Cervantes na"
+      "c": "El presidente del Congreso de los Diputados."
     },
     "answer": "c"
   },
@@ -888,7 +888,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Ertzaintza.",
       "b": "Guardia Civil.",
-      "c": "Mossos d'Esquadra. 23 Instituto Cervantes"
+      "c": "Mossos d'Esquadra."
     },
     "answer": "a"
   },
@@ -965,7 +965,7 @@ export const questions: Question[] = [
     "options": {
       "a": "En el boletín del Instituto Nacional de Estadística (INE).",
       "b": "En el Portal de la Administración Electrónica (PAe).",
-      "c": "En el Boletín Oficial del Estado (BOE). 24 Instituto Cervantes na"
+      "c": "En el Boletín Oficial del Estado (BOE)."
     },
     "answer": "c"
   },
@@ -1207,7 +1207,7 @@ export const questions: Question[] = [
     "options": {
       "a": "aragonés.",
       "b": "castellano.",
-      "c": "leonés. 25 Instituto Cervantes"
+      "c": "leonés."
     },
     "answer": "b"
   },
@@ -1295,7 +1295,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Andalucía.",
       "b": "Cataluña.",
-      "c": "Castilla y León. 26 Instituto Cervantes na"
+      "c": "Castilla y León."
     },
     "answer": "a"
   },
@@ -1397,7 +1397,7 @@ export const questions: Question[] = [
     "question": "La Constitución garantiza el derecho de los españoles a una vivienda digna.",
     "options": {
       "a": "Verdadero.",
-      "b": "Falso. 33 Instituto Cervantes"
+      "b": "Falso."
     },
     "answer": "a"
   },
@@ -1477,7 +1477,7 @@ export const questions: Question[] = [
     "question": "La libertad de prensa está limitada por el respeto al honor de las personas.",
     "options": {
       "a": "Verdadero.",
-      "b": "Falso. 34 Instituto Cervantes"
+      "b": "Falso."
     },
     "answer": "a"
   },
@@ -1677,7 +1677,7 @@ export const questions: Question[] = [
     "question": "En España los ciudadanos pueden elegir en qué ciudad quieren vivir.",
     "options": {
       "a": "Verdadero.",
-      "b": "Falso. 35 Instituto Cervantes"
+      "b": "Falso. "
     },
     "answer": "a"
   },
@@ -1765,7 +1765,7 @@ export const questions: Question[] = [
     "options": {
       "a": "En Andalucía.",
       "b": "En Canarias.",
-      "c": "En Aragón. 43 Instituto Cervantes"
+      "c": "En Aragón."
     },
     "answer": "a"
   },
@@ -1853,7 +1853,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Canarias.",
       "b": "Comunidad Valenciana.",
-      "c": "Madrid. 44 Instituto Cervantes física y política"
+      "c": "Madrid."
     },
     "answer": "c"
   },
@@ -2194,7 +2194,7 @@ export const questions: Question[] = [
     "options": {
       "a": "campeones paraolímpicos.",
       "b": "músicos famosos.",
-      "c": "artistas de cine. 67 Instituto Cervantes"
+      "c": "artistas de cine."
     },
     "answer": "a"
   },
@@ -2271,7 +2271,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Barcelona.",
       "b": "Madrid.",
-      "c": "Córdoba. 68 Instituto Cervantes"
+      "c": "Córdoba."
     },
     "answer": "c"
   },
@@ -2557,7 +2557,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Gazpacho.",
       "b": "Pizza.",
-      "c": "Pasta. 93 Instituto Cervantes"
+      "c": "Pasta."
     },
     "answer": "a"
   },
@@ -2645,7 +2645,7 @@ export const questions: Question[] = [
     "options": {
       "a": "En el registro civil.",
       "b": "En una comisaría de policía.",
-      "c": "En el Ayuntamiento. 94 Instituto Cervantes"
+      "c": "En el Ayuntamiento."
     },
     "answer": "b"
   },
@@ -2876,7 +2876,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Al hospital.",
       "b": "Al centro de salud.",
-      "c": "A la farmacia. 95 Instituto Cervantes"
+      "c": "A la farmacia."
     },
     "answer": "b"
   },
@@ -2964,7 +2964,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Patrimonio de la Humanidad.",
       "b": "una vía de ferrocarril.",
-      "c": "una ruta para excursionistas. 96 Instituto Cervantes"
+      "c": "una ruta para excursionistas."
     },
     "answer": "a"
   },
@@ -3206,7 +3206,7 @@ export const questions: Question[] = [
     "options": {
       "a": "es obligatoria.",
       "b": "tiene dos ciclos.",
-      "c": "empieza a los 4 años. 97 Instituto Cervantes"
+      "c": "empieza a los 4 años."
     },
     "answer": "b"
   },
@@ -3261,7 +3261,7 @@ export const questions: Question[] = [
     "options": {
       "a": "En el turismo.",
       "b": "En la industria automovilística.",
-      "c": "En tecnología digital. 98 Instituto Cervantes"
+      "c": "En tecnología digital."
     },
     "answer": "a"
   }
