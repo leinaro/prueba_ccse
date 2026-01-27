@@ -43,7 +43,7 @@ export default function QuestionCard({
   return (
     <Card className="w-full shadow-lg">
       <CardHeader>
-        <CardTitle className="text-xl md:text-2xl leading-snug">{question.question}</CardTitle>
+        <CardTitle className="text-xl md:text-2xl leading-snug">({question.id}) {question.question}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 gap-3">

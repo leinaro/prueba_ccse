@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Flag, Map, Palette, Briefcase } from "lucide-react";
+import { BookOpen, Flag, Map, Palette, Briefcase, ClipboardCheck, List } from "lucide-react";
 import Link from "next/link";
 
 const tasks = [
@@ -37,6 +37,39 @@ export default function Home() {
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      <div className="text-center mt-16 mb-8 sm:mb-12 w-full max-w-4xl">
+        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+            Otras Opciones
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl mb-8">
+        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <CardHeader className="flex flex-row items-center gap-4">
+              <ClipboardCheck className="w-8 h-8 text-accent" />
+              <CardTitle className="text-2xl font-bold">Simular Examen</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col items-start gap-4">
+              <p className="text-muted-foreground flex-grow">Pon a prueba tus conocimientos con una selección de 16 preguntas aleatorias de todas las tareas.</p>
+              <Button asChild className="w-full mt-auto">
+                <Link href="/quiz/examen-simulado">Comenzar Simulación</Link>
+              </Button>
+            </CardContent>
+        </Card>
+        <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <CardHeader className="flex flex-row items-center gap-4">
+              <List className="w-8 h-8 text-accent" />
+              <CardTitle className="text-2xl font-bold">Todas las Preguntas</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col items-start gap-4">
+              <p className="text-muted-foreground flex-grow">Accede al banco completo de preguntas para estudiar y prepararte a fondo.</p>
+              <Button asChild className="w-full mt-auto">
+                <Link href="/preguntas">Ver Preguntas</Link>
+              </Button>
+            </CardContent>
+        </Card>
       </div>
     </main>
   );
