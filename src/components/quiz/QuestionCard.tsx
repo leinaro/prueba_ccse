@@ -52,7 +52,10 @@ export default function QuestionCard({
               <Button
                 key={key}
                 variant="outline"
-                className={cn(getButtonClass(key))}
+                className={cn(
+                  getButtonClass(key),
+                  !selectedAnswer && "hover:bg-transparent hover:border-primary"
+                )}
                 onClick={() => onSelectAnswer(key)}
                 disabled={!!selectedAnswer}
               >
