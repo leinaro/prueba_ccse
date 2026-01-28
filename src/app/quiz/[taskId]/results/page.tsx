@@ -14,22 +14,19 @@ export default function ResultsPage({
   params: { taskId: string };
   searchParams: { incorrect?: string };
 }) {
-  const incorrectIds = searchParams.incorrect ? searchParams.incorrect.split(',').map(Number).filter(id => !isNaN(id)) : [];
+  const incorrectIds = searchParams.incorrect
+    ? searchParams.incorrect.split(',').filter(Boolean).map(Number)
+    : [];
   
   const incorrectlyAnsweredQuestions = questions.filter(q => incorrectIds.includes(q.id)) as Question[];
 
   const isSimulatedExam = params.taskId === 'examen-simulado';
   
-  let finalCorrectAnswers: number;
-  let finalTotalQuestions: number;
-
-  if (isSimulatedExam) {
-    finalTotalQuestions = 25;
-    finalCorrectAnswers = finalTotalQuestions - incorrectlyAnsweredQuestions.length;
-  } else {
-    finalTotalQuestions = questions.filter(q => q.task.toLowerCase() === params.taskId.replace('-', ' ')).length;
-    finalCorrectAnswers = finalTotalQuestions - incorrectlyAnsweredQuestions.length;
-  }
+  const totalQuestions = isSimulatedExam
+    ? 25
+    : questions.filter(q => q.task.toLowerCase() === params.taskId.replace('-', ' ')).length;
+  
+  const correctAnswers = totalQuestions - incorrectlyAnsweredQuestions.length;
 
 
   return (
@@ -45,7 +42,7 @@ export default function ResultsPage({
           <CardContent>
             <AdBanner />
             <div className="text-center my-6">
-                <p className="text-5xl sm:text-6xl font-bold">{finalCorrectAnswers} / {finalTotalQuestions}</p>
+                <p className="text-5xl sm:text-6xl font-bold">{correctAnswers} / {totalQuestions}</p>
                 <p className="text-muted-foreground mt-2">Respuestas correctas</p>
             </div>
             {incorrectlyAnsweredQuestions.length === 0 ? (
