@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { PartyPopper, Frown } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import AdBanner from "@/components/AdBanner";
 
 export default function ResultsPage({
   params,
@@ -40,7 +39,6 @@ export default function ResultsPage({
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <AdBanner />
             <div className="text-center my-6">
                 <p className="text-5xl sm:text-6xl font-bold">{correctAnswers} / {totalQuestions}</p>
                 <p className="text-muted-foreground mt-2">Respuestas correctas</p>
@@ -60,8 +58,6 @@ export default function ResultsPage({
             )}
 
             <ResultsSummary questions={incorrectlyAnsweredQuestions} />
-
-            <AdBanner />
 
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild>

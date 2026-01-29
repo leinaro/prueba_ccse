@@ -4,7 +4,6 @@ import QuizClient from "@/components/quiz/QuizClient";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import AdBanner from "@/components/AdBanner";
 
 // Function to pick first N elements
 const pickFirstN = (array: Question[], count: number): Question[] => {
@@ -40,7 +39,6 @@ export default function ExamPage() {
             </h1>
         </div>
         <QuizClient questions={examQuestions} taskId="examen-simulado" />
-        <AdBanner />
       </div>
     </main>
   );

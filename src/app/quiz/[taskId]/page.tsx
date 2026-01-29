@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import AdBanner from "@/components/AdBanner";
 
 export default function QuizPage({ params }: { params: { taskId: string } }) {
   const taskId = params.taskId.replace("-", " "); // "tarea-1" -> "tarea 1"
@@ -33,7 +32,6 @@ export default function QuizPage({ params }: { params: { taskId: string } }) {
             </h1>
         </div>
         <QuizClient questions={taskQuestions as Question[]} taskId={params.taskId} />
-        <AdBanner />
       </div>
     </main>
   );

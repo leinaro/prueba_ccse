@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { ArrowLeft, Check, Search } from "lucide-react";
-import AdBanner from "@/components/AdBanner";
 
 export default function AllQuestionsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -85,7 +84,6 @@ export default function AllQuestionsPage() {
                 )}
             </Accordion>
         </div>
-        <AdBanner />
         <div className="mt-8 text-center">
             <Button asChild>
                 <Link href="/">Volver al inicio</Link>

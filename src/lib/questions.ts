@@ -162,7 +162,7 @@ export const questions: Question[] = [
     "options": {
       "a": "El presidente del Gobierno.",
       "b": "El rey.",
-      "c": "El director de la Real Academia Española. Manual de preparación de la prueba CCSE 2026"
+      "c": "El director de la Real Academia Española."
     },
     "answer": "b"
   },
@@ -481,7 +481,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Princesa de Asturias.",
       "b": "Princesa de Aragón.",
-      "c": "Duquesa de Alba. Manual de preparación de la prueba CCSE 2026"
+      "c": "Duquesa de Alba."
     },
     "answer": "a"
   },
@@ -811,7 +811,7 @@ export const questions: Question[] = [
     "options": {
       "a": "El poder ejecutivo.",
       "b": "El poder legislativo.",
-      "c": "El poder judicial. Manual de preparación de la prueba CCSE 2026"
+      "c": "El poder judicial."
     },
     "answer": "b"
   },
@@ -1119,7 +1119,7 @@ export const questions: Question[] = [
     "options": {
       "a": "el Estado.",
       "b": "las comunidades autónomas.",
-      "c": "los ayuntamientos. Manual de preparación de la prueba CCSE 2026"
+      "c": "los ayuntamientos."
     },
     "answer": "a"
   },
@@ -1647,7 +1647,7 @@ export const questions: Question[] = [
     "question": "En España, los ciudadanos pueden desplazarse libremente por todo el territorio nacional.",
     "options": {
       "a": "Verdadero.",
-      "b": "Falso. Manual de preparación de la prueba CCSE 2026"
+      "b": "Falso."
     },
     "answer": "a"
   },
@@ -2106,7 +2106,7 @@ export const questions: Question[] = [
     "options": {
       "a": "científico.",
       "b": "guitarrista.",
-      "c": "pintor. Manual de preparación de la prueba CCSE 2026"
+      "c": "pintor."
     },
     "answer": "b"
   },
@@ -2480,7 +2480,7 @@ export const questions: Question[] = [
     "options": {
       "a": "IBI (Impuesto sobre Bienes Inmuebles).",
       "b": "ITV (Inspección Técnica de Vehículos).",
-      "c": "ITE (Inspección Técnica de Edificios). Manual de preparación de la prueba CCSE 2026"
+      "c": "ITE (Inspección Técnica de Edificios)."
     },
     "answer": "b"
   },
@@ -2799,7 +2799,7 @@ export const questions: Question[] = [
     "options": {
       "a": "Tenerife.",
       "b": "Alicante.",
-      "c": "Algeciras. Manual de preparación de la prueba CCSE 2026"
+      "c": "Algeciras."
     },
     "answer": "c"
   },
@@ -3118,7 +3118,7 @@ export const questions: Question[] = [
     "options": {
       "a": "El autobús.",
       "b": "El taxi.",
-      "c": "El tranvía. Manual de preparación de la prueba CCSE 2026"
+      "c": "El tranvía."
     },
     "answer": "b"
   },
