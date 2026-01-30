@@ -1,6 +1,6 @@
 import { questions } from "@/lib/questions";
 import type { Question } from "@/lib/types";
-import QuizClient from "@/components/quiz/QuizClient";
+import ExamClient from "@/components/exam/ExamClient"; // Updated import
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -24,30 +24,32 @@ export default function ExamPage() {
   const task5Questions = pickRandom(questions.filter(q => q.task.toLowerCase() === 'tarea 5'), 7);
 
   const examQuestions = [
-      ...task1Questions, 
-      ...task2Questions, 
-      ...task3Questions, 
-      ...task4Questions, 
-      ...task5Questions
+    ...task1Questions,
+    ...task2Questions,
+    ...task3Questions,
+    ...task4Questions,
+    ...task5Questions,
   ];
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="w-full max-w-3xl mx-auto">
-        <div className="relative flex items-center justify-center mb-4">
-          <Button asChild variant="ghost" size="icon" className="absolute left-0">
+        <div className="relative flex items-center justify-center mb-4 pt-8">
+          <Button asChild variant="ghost" size="icon" className="absolute left-0 top-8">
             <Link href="/" aria-label="Volver a la página principal">
               <ArrowLeft className="h-6 w-6" />
             </Link>
           </Button>
-          <h1 className="text-2xl sm:text-3xl font-bold text-center text-primary">
-            Simulacro de Examen CCSE
-          </h1>
+          <div className="text-center">
+            <h1 className="text-2xl sm:text-3xl font-bold text-primary">
+              Simulacro de Examen CCSE
+            </h1>
+            <p className="text-muted-foreground mt-1">
+              25 preguntas con la distribución oficial del examen real.
+            </p>
+          </div>
         </div>
-        <p className="text-center text-muted-foreground mb-4">
-          25 preguntas con la distribución oficial del examen real.
-        </p>
-        <QuizClient questions={examQuestions as Question[]} taskId="examen-simulado" />
+        <ExamClient questions={examQuestions as Question[]} />
       </div>
     </main>
   );

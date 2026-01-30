@@ -16,33 +16,13 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center min-h-screen p-4 sm:p-8">
       <div className="text-center mb-8 sm:mb-12">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-primary">
-          España Quiz
+          Prepárate para el examen de nacionalidad.
         </h1>
-        <p className="mt-4 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-          Pon a prueba tus conocimientos sobre España. Elige una tarea para comenzar.
-        </p>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl">
-        {tasks.map((task, index) => (
-          <Card key={task.id} className={`shadow-lg hover:shadow-xl transition-shadow duration-300 ${index === 4 ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <task.icon className="w-8 h-8 text-accent" />
-              <CardTitle className="text-2xl font-bold">{task.name}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col items-start gap-4">
-              <p className="text-muted-foreground flex-grow">{task.description}</p>
-              <Button asChild className="w-full mt-auto">
-                <Link href={`/quiz/tarea-${task.id}`}>Comenzar</Link>
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
 
-      <div className="text-center mt-16 mb-8 sm:mb-12 w-full max-w-4xl">
-        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-            Otras Opciones
-        </h2>
+        <p className="mt-4 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+          Simula un examen real de 25 preguntas o practica respondiendo todas a tu ritmo.
+          Además, accede a una sección completa con todas las preguntas y sus respuestas para reforzar tu estudio.        
+        </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl mb-8">
@@ -70,6 +50,33 @@ export default function Home() {
               </Button>
             </CardContent>
         </Card>
+      </div>
+
+      <div className="text-center mt-16 mb-8 sm:mb-12 w-full max-w-4xl">
+        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          Repasa las preguntas del examen
+        </h2>
+
+        <p className="mt-4 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+          Elige una tarea y responde preguntas al azar para practicar y reforzar tus conocimientos.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl">
+        {tasks.map((task, index) => (
+          <Card key={task.id} className={`shadow-lg hover:shadow-xl transition-shadow duration-300 ${index === 4 ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}>
+            <CardHeader className="flex flex-row items-center gap-4">
+              <task.icon className="w-8 h-8 text-accent" />
+              <CardTitle className="text-2xl font-bold">{task.name}</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-col items-start gap-4">
+              <p className="text-muted-foreground flex-grow">{task.description}</p>
+              <Button asChild className="w-full mt-auto">
+                <Link href={`/quiz/tarea-${task.id}`}>Comenzar</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </main>
   );
