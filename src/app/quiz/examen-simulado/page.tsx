@@ -5,17 +5,23 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-// Function to pick first N elements
-const pickFirstN = (array: Question[], count: number): Question[] => {
-  return array.slice(0, count);
+// Function to pick N random elements from an array
+const pickRandom = (array: Question[], count: number): Question[] => {
+  const shuffled = [...array];
+  // Using Fisher-Yates shuffle for unbiased randomness
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, count);
 };
 
 export default function ExamPage() {
-  const task1Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 1'), 10);
-  const task2Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 2'), 3);
-  const task3Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 3'), 2);
-  const task4Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 4'), 3);
-  const task5Questions = pickFirstN(questions.filter(q => q.task.toLowerCase() === 'tarea 5'), 7);
+  const task1Questions = pickRandom(questions.filter(q => q.task.toLowerCase() === 'tarea 1'), 10);
+  const task2Questions = pickRandom(questions.filter(q => q.task.toLowerCase() === 'tarea 2'), 3);
+  const task3Questions = pickRandom(questions.filter(q => q.task.toLowerCase() === 'tarea 3'), 2);
+  const task4Questions = pickRandom(questions.filter(q => q.task.toLowerCase() === 'tarea 4'), 3);
+  const task5Questions = pickRandom(questions.filter(q => q.task.toLowerCase() === 'tarea 5'), 7);
 
   const examQuestions = [
       ...task1Questions, 
@@ -29,16 +35,19 @@ export default function ExamPage() {
     <main className="flex flex-col items-center justify-center min-h-screen p-4">
       <div className="w-full max-w-3xl mx-auto">
         <div className="relative flex items-center justify-center mb-4">
-            <Button asChild variant="ghost" size="icon" className="absolute left-0">
-                <Link href="/" aria-label="Volver a la página principal">
-                    <ArrowLeft className="h-6 w-6" />
-                </Link>
-            </Button>
-            <h1 className="text-2xl sm:text-3xl font-bold text-center text-primary">
-                Examen Simulado
-            </h1>
+          <Button asChild variant="ghost" size="icon" className="absolute left-0">
+            <Link href="/" aria-label="Volver a la página principal">
+              <ArrowLeft className="h-6 w-6" />
+            </Link>
+          </Button>
+          <h1 className="text-2xl sm:text-3xl font-bold text-center text-primary">
+            Simulacro de Examen CCSE
+          </h1>
         </div>
-        <QuizClient questions={examQuestions} taskId="examen-simulado" />
+        <p className="text-center text-muted-foreground mb-4">
+          25 preguntas con la distribución oficial del examen real.
+        </p>
+        <QuizClient questions={examQuestions as Question[]} taskId="examen-simulado" />
       </div>
     </main>
   );

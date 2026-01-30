@@ -14,6 +14,12 @@ export default function QuizPage({ params }: { params: { taskId: string } }) {
     (q) => q.task.toLowerCase() === taskId.toLowerCase()
   );
 
+  // Shuffle the questions array for randomness
+  for (let i = taskQuestions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [taskQuestions[i], taskQuestions[j]] = [taskQuestions[j], taskQuestions[i]];
+  }
+
   if (taskQuestions.length === 0) {
     notFound();
   }
